@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\SubscriberController;
 use App\Http\Controllers\WebsiteController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -28,4 +29,9 @@ Route::group(['prefix' => 'post'], function () {
 
 Route::group(['prefix' => 'website'], function (){
     Route::get('/list', [WebsiteController::class, 'getWebsites']);
+});
+
+
+Route::group(['prefix' => 'subscriber'], function (){
+   Route::post('/subscribe', [SubscriberController::class, 'subscribe']);
 });
