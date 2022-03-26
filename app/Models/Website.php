@@ -10,4 +10,9 @@ class Website extends Model
     use HasFactory;
 
     protected $fillable = ['title', 'url'];
+
+
+    public function subscribers(){
+        return $this->hasMany(Subscriber::class);
+    }
 }

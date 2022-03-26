@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Events\PostCreated;
 use App\Http\Requests\CreatePostRequest;
 use App\Models\Post;
 use Illuminate\Http\Request;
@@ -14,6 +15,8 @@ class PostController extends Controller
         $data = $request->validated();
         $data['slug'] = Str::slug($data['title']);
         $post = Post::create($data);
+
+        PostCreated::dispatch($post);
         return $this->success($post);
     }
 
