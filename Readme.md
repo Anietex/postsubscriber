@@ -12,3 +12,6 @@ From there you need to update the database config and email config to match your
 Since emails requires queues, you have run the queue command on a different terminal use this command   
 
 `php artisan queue:work --tries=3 `
+
+Postman documentation
+https://documenter.getpostman.com/view/6340830/UVyn2yuP
